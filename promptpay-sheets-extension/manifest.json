@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "PromptPay LAN Display",
+  "version": "1.0.2",
+  "minimum_chrome_version": "116",
+  "description": "Send the active Google Sheets row amount to a local Android PromptPay display.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "debugger",
+    "offscreen",
+    "clipboardRead",
+    "clipboardWrite",
+    "notifications"
+  ],
+  "optional_host_permissions": [
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "PromptPay Display"
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "show": {
+      "suggested_key": {
+        "default": "Alt+Q",
+        "mac": "Alt+Q"
+      },
+      "description": "Show PromptPay QR"
+    },
+    "hide": {
+      "suggested_key": {
+        "default": "Alt+X",
+        "mac": "Alt+X"
+      },
+      "description": "Hide QR and return to video"
+    },
+    "resend": {
+      "suggested_key": {
+        "default": "Alt+R",
+        "mac": "Alt+R"
+      },
+      "description": "Resend last successful payment"
+    }
+  }
+}

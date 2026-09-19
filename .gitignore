@@ -1,0 +1,12 @@
+**/.gradle/
+**/build/
+**/local.properties
+.DS_Store
+**/node_modules/
+**/__pycache__/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.jks
+**/*.keystore
+**/.idea/

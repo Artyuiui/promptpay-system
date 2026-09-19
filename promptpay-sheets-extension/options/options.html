@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>PromptPay Settings</title><link rel="stylesheet" href="../ui.css"></head><body><main><h1>PromptPay Display Settings</h1><p>Connect directly to your Android display over Wi-Fi.</p><form id="settings">
+<label>IP address / localhost<input name="host" placeholder="192.168.1.50 or localhost" required></label>
+<label>Port<input name="port" type="number" min="1024" max="65535" required></label>
+<label>API token<input name="token" type="password" autocomplete="off" minlength="16" maxlength="128" required></label>
+<label>Amount source<select name="mode"><option value="row">Current Row + Column</option><option value="fixed">Fixed Cell</option><option value="selected">Selected Cell</option></select></label>
+<label id="column-field">Amount column<input name="column" placeholder="G"></label>
+<label id="cell-field">Amount cell<input name="cell" placeholder="D10"></label>
+<label>QR timeout (seconds)<input name="timeout" type="number" min="1" max="3600" required></label>
+<div class="actions"><button type="submit">Save</button><button type="button" id="test" class="secondary">Test Connection</button></div></form>
+<output id="status" aria-live="polite">Enter the settings shown on your Android device.</output>
+<p><small>Chrome asks for access only to the IP you save. Reading Sheets temporarily attaches Chrome’s debugger, copies one cell, and restores the original selection and text/HTML clipboard. Keep the sheet still while reading. Close DevTools first.</small></p>
+<footer><a href="#" id="shortcuts">Configure keyboard shortcuts</a></footer></main><script type="module" src="options.js"></script></body></html>
